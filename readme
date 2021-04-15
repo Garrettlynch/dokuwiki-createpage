@@ -34,10 +34,10 @@ function createpage(name)
 
 <span class="createpage">
 	<p>Add New Page</p>
-		<form onsubmit="event.preventDefault(); createpage(createid.value);">
-			<input type="text" name="createname" id="createid" placeholder="use colons for namespaces" value="" size="15" maxlength="100" />
-			<input type="submit" value="Go" />
-		</form>
+	<form onsubmit="event.preventDefault(); createpage(createid.value);">
+		<input type="text" name="createname" id="createid" placeholder="use colons for namespaces" value="" size="15" maxlength="100" />
+		<input type="submit" value="Go" />
+	</form>
 </span>
 
 <!-- Step 1: Add this JavaScript and html form to your template's main.php (probably in the Site Tools menu) -->
