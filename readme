@@ -1,0 +1,71 @@
+<!--
+
+This adds a Create Page form to a dokuwiki site, avoiding the use of plugins (both Add New Page and npd plugins have issues).
+
+Tested with Dokuwiki Release 2018-04-22b "Greebo".
+
+-->
+
+
+
+<!-- Step 1: Add this JavaScript and html form to your template's main.php (probably in the Site Tools menu) -->
+
+<script type="text/javascript">
+//<![CDATA[
+
+//create page script
+function createpage(name)
+{
+	//check that an empty string was not passed
+    if (name !== '')
+    { 
+    	//go to edit of new page
+        window.location.href = "doku.php?id="+ name +"&do=edit";
+    }
+    else
+    {
+    	//alert user
+        alert("Please enter a name for your page!");
+    }
+}
+
+//]]>
+</script>
+
+<span class="createpage">
+	<p>Add New Page</p>
+		<form onsubmit="event.preventDefault(); createpage(createid.value);">
+			<input type="text" name="createname" id="createid" placeholder="use colons for namespaces" value="" size="15" maxlength="100" />
+			<input type="submit" value="Go" />
+		</form>
+</span>
+
+<!-- Step 1: Add this JavaScript and html form to your template's main.php (probably in the Site Tools menu) -->
+
+
+
+
+/* Step 2: add this CSS to one of the .css pages in your template. */
+/* Modify the CSS to suit your template and and a section if you need to style the submit input */
+
+/* this targets the span holder for the form */
+.createpage
+{
+    color: #000000;
+}
+
+/* this targets the paragraph of text */
+.createpage p
+{
+    margin: 0px 0px 5px 0px !important;
+}
+
+/* this targets the text input */
+.createpage input[type=text]
+{
+    width: 179px;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+}
+
+/* Step 2: add this CSS to one of the .css pages in your template */
